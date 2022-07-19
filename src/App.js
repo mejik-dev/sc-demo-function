@@ -17,15 +17,17 @@ export const App = () => {
 
   return (
     <div className="App">
-      <div className="form">
-        <label>Product name:</label>
-        <input type="text" onChange={(e) => setName(e.target.value)} />
-        <label>Price in USD:</label>
-        <input type="number" onChange={(e) => setPrice(e.target.value)} />
-        <label>Quantity:</label>
-        <input type="number" onChange={(e) => setQuantity(e.target.value)} />
-      </div>
-      <button onClick={handleAddtoCart}>Add item to cart</button>
+      <form onSubmit={handleAddtoCart}>
+        <div className="form">
+          <label>Product name:</label>
+          <input type="text" onChange={(e) => setName(e.target.value)} />
+          <label>Price in USD:</label>
+          <input type="number" onChange={(e) => setPrice(e.target.value)} />
+          <label>Quantity:</label>
+          <input type="number" onChange={(e) => setQuantity(e.target.value)} />
+        </div>
+        <button type="submit">Add item to cart</button>
+      </form>
       <h1>Cart</h1>
       <h3>Total: ${toDecimal(getTotal(cart))}</h3>
       <ul>

@@ -7,7 +7,9 @@ export const useApp = () => {
   const [quantity, setQuantity] = React.useState(1);
   const [loading, setLoading] = React.useState(false);
 
-  const handleAddtoCart = () => {
+  const handleAddtoCart = (e) => {
+    e.preventDefault();
+
     if (name === "" || price <= 0 || quantity <= 0) {
       return;
     }
